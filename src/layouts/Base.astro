@@ -23,15 +23,15 @@ const altPath = lang === 'es'
   <title>{title}</title>
 </head>
 <body class="font-sans antialiased">
-  <header class="sticky top-0 z-50 border-b border-(--border) bg-[rgb(10_15_26/0.85)] backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-(--border) bg-[rgb(240_245_255/0.85)] backdrop-blur">
     <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-      <a href={getLocalizedPath('/', lang)} class="text-lg font-bold text-(--brand-light)">
+      <a href={getLocalizedPath('/', lang)} class="text-lg font-bold text-(--brand)">
         LinkKeep
       </a>
       <div class="flex items-center gap-4 text-sm">
         <a href={getLocalizedPath('/privacy', lang)} class="text-(--muted) hover:text-(--foreground) transition">{t('nav.privacy')}</a>
         <a href={getLocalizedPath('/terms', lang)} class="text-(--muted) hover:text-(--foreground) transition">{t('nav.terms')}</a>
-        <a href={altPath} class="rounded-lg border border-(--border) px-2 py-1 text-xs font-medium text-(--brand-light) hover:border-(--brand) transition">
+        <a href={altPath} class="rounded-lg border border-(--border) px-2 py-1 text-xs font-medium text-(--brand) hover:border-(--brand) transition">
           {altLang.toUpperCase()}
         </a>
       </div>
@@ -43,7 +43,7 @@ const altPath = lang === 'es'
   </main>
 
   <footer class="border-t border-(--border) py-8 text-center text-sm text-(--muted)">
-    <p>{t('footer.made')} <a href="https://florexlabs.com" class="text-(--brand-light) hover:underline">FLOREX LABS</a></p>
+    <p>{t('footer.made')} <a href="https://florexlabs.com" class="text-(--brand) hover:underline">FLOREX LABS</a></p>
     <p class="mt-1">© {new Date().getFullYear()} FLOREX LABS. {t('footer.rights')}</p>
   </footer>
 </body>
