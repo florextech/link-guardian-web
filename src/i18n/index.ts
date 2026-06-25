@@ -3,7 +3,7 @@ export const defaultLang = 'es' as const;
 
 export const ui = {
   es: {
-    'site.title': 'LinkGuardian — Guarda y verifica tus enlaces',
+    'site.title': 'LinkKeep — Guarda y verifica tus enlaces',
     'site.description': 'App iOS para guardar, organizar y verificar el estado de tus enlaces. Privada, sin cuentas, sin servidores.',
     'nav.home': 'Inicio',
     'nav.privacy': 'Privacidad',
@@ -29,7 +29,7 @@ export const ui = {
     'footer.rights': 'Todos los derechos reservados.',
   },
   en: {
-    'site.title': 'LinkGuardian — Save and verify your links',
+    'site.title': 'LinkKeep — Save and verify your links',
     'site.description': 'iOS app to save, organize, and verify the status of your links. Private, no accounts, no servers.',
     'nav.home': 'Home',
     'nav.privacy': 'Privacy',
