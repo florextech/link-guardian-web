@@ -1,0 +1,39 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+<Base title="Privacy Policy — LinkGuardian" description="LinkGuardian privacy policy. We do not collect personal data.">
+  <article class="mx-auto max-w-3xl px-4 py-16 sm:py-20">
+    <h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">Privacy Policy</h1>
+    <p class="mt-2 text-sm text-(--muted)">Last updated: June 24, 2026</p>
+
+    <div class="mt-8 space-y-6 text-(--muted) leading-relaxed">
+      <p>LinkGuardian ("the App") does not collect, store, or transmit personal data to external servers.</p>
+
+      <h2 class="font-display text-xl font-semibold text-(--foreground)">Data stored locally</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>URLs saved by the user</li>
+        <li>Titles and metadata extracted from web pages</li>
+        <li>Tags, favorites, and verification status</li>
+        <li>Verification history</li>
+      </ul>
+      <p>All data is stored exclusively on the user's device using SwiftData. There is no backend server.</p>
+
+      <h2 class="font-display text-xl font-semibold text-(--foreground)">Third-party services</h2>
+      <p>The App does not use analytics, tracking, advertising, or any third-party services that collect user information.</p>
+
+      <h2 class="font-display text-xl font-semibold text-(--foreground)">Device permissions</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong class="text-(--foreground)">Face ID / Touch ID:</strong> used exclusively to protect the hidden links section.</li>
+        <li><strong class="text-(--foreground)">Notifications:</strong> to alert when a link changes status.</li>
+        <li><strong class="text-(--foreground)">Background refresh:</strong> for periodic link verification.</li>
+        <li><strong class="text-(--foreground)">Network access:</strong> to verify the HTTP status of saved links.</li>
+      </ul>
+
+      <h2 class="font-display text-xl font-semibold text-(--foreground)">Data sharing</h2>
+      <p>The App does not share data with third parties. The export feature generates a local JSON file that the user fully controls.</p>
+
+      <h2 class="font-display text-xl font-semibold text-(--foreground)">Contact</h2>
+      <p>If you have questions about this policy, contact us at <a href="mailto:contact@florexlabs.com" class="text-(--brand-700) hover:underline">contact@florexlabs.com</a>.</p>
+    </div>
+  </article>
+</Base>
