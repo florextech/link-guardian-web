@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n';
+
+interface Props { title?: string; description?: string; }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { title = t('site.title'), description = t('site.description') } = Astro.props;
+const altLang = lang === 'es' ? 'en' : 'es';
+const altPath = lang === 'es' 
+  ? `/en${Astro.url.pathname}` 
+  : Astro.url.pathname.replace(/^\/en/, '') || '/';
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <link rel="alternate" hreflang={altLang} href={altPath} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+</head>
+<body class="font-sans antialiased">
+  <header class="sticky top-0 z-50 border-b border-(--border) bg-[rgb(11_13_12/0.85)] backdrop-blur">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+      <a href={getLocalizedPath('/', lang)} class="font-display text-lg font-bold text-(--brand-700)">
+        LinkGuardian
+      </a>
+      <div class="flex items-center gap-4 text-sm">
+        <a href={getLocalizedPath('/privacy', lang)} class="text-(--muted) hover:text-(--foreground) transition">{t('nav.privacy')}</a>
+        <a href={getLocalizedPath('/terms', lang)} class="text-(--muted) hover:text-(--foreground) transition">{t('nav.terms')}</a>
+        <a href={altPath} class="rounded-lg border border-(--border) px-2 py-1 text-xs font-medium text-(--brand-700) hover:border-[rgb(189_241_70/0.5)] transition">
+          {altLang.toUpperCase()}
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="border-t border-(--border) py-8 text-center text-sm text-(--muted)">
+    <p>{t('footer.made')} <a href="https://florexlabs.com" class="text-(--brand-700) hover:underline">FLOREX LABS</a></p>
+    <p class="mt-1">© {new Date().getFullYear()} FLOREX LABS. {t('footer.rights')}</p>
+  </footer>
+</body>
+</html>

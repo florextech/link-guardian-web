@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+
+:root {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --bg: #0b0d0c;
+  --surface: #111513;
+  --surface-muted: #171c19;
+  --foreground: #edf6ee;
+  --muted: #b8c4ba;
+  --border: #263028;
+  --brand-900: #f4ffe9;
+  --brand-700: #d7ff6d;
+  --brand-600: #bdf146;
+  --brand-500: #9ddf4b;
+  --brand-300: #76b73d;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-montserrat);
+}
+
+* { border-color: var(--border); }
+
+body {
+  background:
+    radial-gradient(circle at 12% 5%, rgb(183 255 48 / 0.16), transparent 28%),
+    radial-gradient(circle at 88% 4%, rgb(124 231 52 / 0.12), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgb(22 163 74 / 0.1), transparent 35%),
+    var(--bg);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-montserrat), sans-serif; }
+
+*::selection {
+  background: rgb(184 255 46 / 0.3);
+  color: var(--brand-900);
+}
